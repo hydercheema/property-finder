@@ -7,3 +7,27 @@
 .mb-50 {
   margin-bottom: 50px;
 }
+.alert {
+  background-color: green;
+  color: white;
+  padding-top: 80px;
+  text-align: center;
+  display: none;
+}
+.navbar-nav .nav-link {
+  color: black;
+  font-size: 18px;
+  background-color: whitesmoke;
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+.navbar-brand {
+  background-color: whitesmoke;
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+.navbar {
+  background-color: whitesmoke;
+}

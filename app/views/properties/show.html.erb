@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container pt-5">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+    <p class="form-control">
+        <strong>Name:</strong>
+        <%= @property.name %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+    <p class="form-control">
+        <strong>Address:</strong>
+        <%= @property.address %>
+    </p>
 
-<p>
-  <strong>Rooms:</strong>
-  <%= @property.rooms %>
-</p>
+    <p class="form-control">
+        <strong>Rooms:</strong>
+        <%= @property.rooms %>
+    </p>
 
-<p>
-  <strong>Bathroom:</strong>
-  <%= @property.bathroom %>
-</p>
+    <p class="form-control">
+        <strong>Bathroom:</strong>
+        <%= @property.bathroom %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+    <p class="form-control">
+        <strong>Price:</strong>
+        <%= @property.price %>
+    </p>
+    <div class="col text-right">
+        <%= link_to 'Back', properties_path ,  class: "btn btn-lg  btn-secondary", style: "color: white"%>
+    </div>
+</div>

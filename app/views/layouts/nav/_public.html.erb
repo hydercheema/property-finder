@@ -1,14 +1,23 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Property Finder</a>
+<nav class="navbar navbar-expand-md custom-nav fixed-top ">
+    <a class="navbar-brand" href="/">Property Finder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse " id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto ">
+            <% if account_signed_in? %>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+            <li class="nav-item">
+                <%= link_to "Properties", properties_path, class:"nav-link" %>
             </li>
+            </li>
+            <% else %>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <% end %>
             <li class="nav-item">
                 <a class="nav-link" href="#">Latest</a>
             </li>
@@ -26,16 +35,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Advertising</a>
             </li>
+        </ul>
+        <ul class="navbar-nav ml-auto ">
+            <% if account_signed_in? %>
             <li class="nav-item">
-                <%= link_to "Login In", new_account_session_path, class:"nav-link" %>
+                <%= link_to "Logout", destroy_account_session_path, method: :delete ,class:"nav-link" %>
+            </li>
+            <% else %>
+            <li class="nav-item">
+                <%= link_to "Login", new_account_session_path, class:"nav-link" %>
             </li>
             <li class="nav-item">
                 <%= link_to "Sign Up", new_account_registration_path, class:"nav-link" %>
             </li>
+            <% end %>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>

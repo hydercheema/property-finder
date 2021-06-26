@@ -16,8 +16,10 @@
     <header>
         <%= render "layouts/nav/public" %>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="mt-50">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
 
     <%= render "layouts/footer" %>
